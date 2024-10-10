@@ -2,10 +2,13 @@
 #import fletcher.shapes: diamond, circle
 
 #set par(justify: true)
+#set text(lang: "de")
 
-= Aufgabe 1
+= Flussdiagramme
 
-== Aufgabe 1.1
+== Aufgabe 1
+
+=== Aufgabe 1.1
 
 Was tut der hier dargestellte Algorithmus? Probieren Sie ihn mit den Zahlen x=2 und y=3 aus und schreiben Sie eine trace-Tabelle (also eine Tabelle, in der für jeden Schritt die Werte der einzelnen Variablen aufgeschrieben werden). 
 
@@ -28,15 +31,15 @@ Was tut der hier dargestellte Algorithmus? Probieren Sie ihn mit den Zahlen x=2 
   node((0,1), align(center)[Fertig], shape: circle),
 )
 
-== Aufgabe 1.2
+=== Aufgabe 1.2
 
 Was passiert, wenn y=0 ist? Was müsste passieren? Erweitern Sie den Algorithmus so, dass bei y=0 auch das korrekte Ergebnis rauskommt. 
 
-== Aufgabe 1.3
+=== Aufgabe 1.3
 
 Was passiert, wenn $y<0$ ist? Was müsste passieren? Erweitern Sie den Algorithmus so, dass auch bei Werten von $y<0$ das korrekte Ergebnis rauskommt.
 
-= Aufgabe 2
+== Aufgabe 2
 
 Schreiben Sie einen Algorithmus, der als Eingabe eine Zahl X sowie deren Länge L (bspw. $X=739$, $L=3$) als Eigabe bekommt und die Summe aller Ziffern in der Zahl X berechnet. Sie dürfen die folgenden Operationen benutzen:
 
@@ -50,13 +53,13 @@ Schreiben Sie einen Algorithmus, der als Eingabe eine Zahl X sowie deren Länge 
 
 Spielen Sie den Algorithmus, um seine Korrektheit zu testen, mit den Eingabewerten $X=993$, $L=3$ durch und schreiben Sie dafür eine trace-Tabelle auf.
 
-== Aufgabe 2.1
+=== Aufgabe 2.1
 
 Erweitern Sie den Algorithmus so, dass er nur die Zahl X als Eingabe bekommt und im ersten Schritt L selber berechnet. Tipp: Überlegen Sie, was die Länge der Zahl im 10er-System bedeutet - wie würden Sie beispielsweise am einfachsten eine beliebige Zahl um eine Ziffer länger machen?
 
 Spielen Sie den neuen Teil des Algorithmus, um seine Korrektheit zu testen, mit dem Eingabewert $X=5690$ durch und schreiben Sie dafür eine trace-Tabelle auf.
 
-= Aufgabe 3
+== Aufgabe 3
 
 Entwickeln Sie einen Algorithmus, der eine Zahl X als Eingabe bekommt und bestimmt, ob diese Zahl durch 3 teilbar ist. Bedenken Sie, dass eine Zahl genau dann durch 3 teilbar ist, wenn ihre Quersumme durch 3 teilbar ist.
 
@@ -65,3 +68,33 @@ Sie dürfen die gleichen Operationen wie in Aufgabe 2 verwenden. Zusätzlich dü
 - Die logischen Verknüpfungen "und" sowie "oder" in Entscheidungen (bspw. "x < 2 oder y == 0")
 
 Spielen Sie den Algorithmus, um seine Korrektheit zu testen, mit den Eingabewerten $X=86$ sowie $X=9487$ durch und schreiben Sie dafür jeweils eine trace-Tabelle auf. Sie dürfen an dieser Stelle davon ausgehen, dass Ihre Operation "Berechne Ziffernsumme" korrekt funktioniert und behandeln Sie ihn wie eine Grundoperation (also: Sie brauchen keine Einträge in der trace-Tabelle für die einzelnen Schritte in "Berechne Ziffernsumme" erstellen).
+
+= Scratch
+
+== Aufgabe 1
+
+Bauen Sie das "Rennspiel" aus der Vorlesung nach. Erweitern Sie es dann um einen Gegner-Sprite, der nicht versucht, die Tür zu erreichen, sondern sich auf die Player-Figur zubewegt. Berührt der Gegner die Player-Figur, sagt die Player-Figur "Aua" und das Spiel ist beendet.
+
+== Aufgabe 2
+
+Schreiben Sie ein kleines Spiel, in dem eine Rakete von einem dunkelgrünen Startpunkt auf einen hellgrünen Landepunkt fliegen muss, ohne den blauen Boden zu berühren. Wenn sie es schafft, soll sie "Gewonnen!" sagen und das Spiel ist beendet. Ein Beispiel ist in @mapexample gezeigt.
+
+Dabei sollen die folgenden Regeln befolgt werden:
+
+- Die Rakete unterliegt der Erdanziehung.
+- Die Rakete kann nicht durch den Boden fallen: Wenn Sie den boden berührt, wird die Geschwindigkeit nach unten auf 0 gesetzt.
+- Wenn eine der Cursortasten betätigt wird, soll die Geschwindigkeit entsprechend angepasst werden (also nach oben, links oder rechts).
+- Wenn die Rakete den blauen Boden berührt, sagt sie "aua" und das Spiel bricht ab.
+- Wenn die Rakete den hellgrünen Boden berührt, sagt sie "Gewonnen!" und das Spiel bricht ab.
+
+Beachten Sie, dass hier mehrere Dinge zusammenspielen: Es gibt Sachen, die immer wieder passieren müssen (die Geschwindigkeit basierend auf der Erdanziehungskraft verändern, die Position der Rakete basierend auf der aktuellen Geschwindigkeit anpassen), dafür benötigen Sie eine Endlosschleife die immer läuft, wenn das Spiel läuft. Es gibt aber auch Dinge, die nur passieren, wenn eine Taste gedrückt wird.
+
+Die Geschwindigkeit hat eine horizontale und eine vertikale Komponente, die perfekt zu dem Koordinatensystem des Bildschirms passen (Veränderungen in x und y). Hier bieten sich 2 Variablen an, um das darzustellen.
+
+Erweitern Sie abschließend das Spiel so, dass die Rakete ihr Aussehen ändert, wenn eine Richtungstaste gedrückt wird (costume-Bilder dafür finden Sie in den Ressourcen in Moodle).
+
+#figure(
+  box(stroke: black, image("Bilder/rocketmap.png", width: 80%)),
+  caption: [Beispielhafte Karte, in der die Rakete am Startpunkt steht und auf die grüne Fläche kommen soll.],
+) <mapexample>
+
