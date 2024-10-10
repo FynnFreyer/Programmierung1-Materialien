@@ -34,7 +34,7 @@
   - Hausaufgaben - Prüfung ab 75% Abgaben, 50% Punkte
   - Fragen stellen (Forum, SL)! 
 - Prüfungsleistung: Wie Hausaufgabe, aber größer (2 Wochen)
-- Bonuspunkte für Verbesserungsvorschläge (siehe #link("https://github.com/dabrowskiw/Programmierung1-Materialien")[#underline("git-repo")]): 2.5% für Vorschlag, 5% für Code (mail, pull request), max. 2/Semester
+- Bonuspunkte für Verbesserungsvorschläge (siehe #link("https://github.com/dabrowskiw/Programmierung1-Materialien/tree/IKGneu")[#underline("git-repo")]): 2.5% für Vorschlag, 5% für Code (mail, pull request), max. 2/Semester
 
 ]
 
