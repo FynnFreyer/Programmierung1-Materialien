@@ -160,7 +160,7 @@ public class Mob {
         if(dir == 'Q') {
             x -= 1;
             y -= 1;
-        }        
+        }
     }
 }
 Mob mob1 = new Mob(12, 15);
@@ -229,4 +229,3 @@ _class: lead
 # Exkurs: Evaluation
 
 TL;DR: Bitte ausfüllen, vor allem für SL, damit es genug Antworten gibt
-
